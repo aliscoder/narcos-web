@@ -1,0 +1,328 @@
+.charInfo {
+  @include w-h(100%, 100%);
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+  top: 0;
+  &__left {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards linear;
+    height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 140px;
+    order: 0;
+
+    &.fade {
+      animation: fadeOut 0.3s forwards linear;
+    }
+
+    > div {
+      width: 297px;
+      margin-right: 100px;
+    }
+
+    &.left {
+      order: 2;
+      align-items: flex-start;
+      > div {
+        width: 297px;
+        margin-left: 100px;
+        margin-right: 0px;
+      }
+    }
+  }
+  &__right {
+    opacity: 0;
+    animation: fadeIn 0.4s forwards linear;
+    height: 0;
+    z-index: 1;
+    flex: 1;
+    order: 2;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+
+    &.fade {
+      animation: fadeOut 0.3s forwards linear;
+    }
+
+    &.left {
+      order: 0;
+      justify-content: flex-end;
+    }
+
+    & .charInfo__btns {
+      display: none;
+    }
+  }
+  &__center {
+    @include w-h(400px, 100%);
+    order: 1;
+    position: relative;
+    z-index: -1;
+  }
+
+  &__title {
+    font-family: 'NORTHDEN';
+    color: color(secondary);
+    font-weight: 400;
+    font-size: font(b3);
+    letter-spacing: 0.02em;
+    line-height: 40px;
+  }
+
+  &__subtitle {
+    font-family: "Northdenrrough";
+    font-weight: 400;
+    font-size: font(b1);
+    line-height: 80px;
+    display: flex;
+    color: color(red);
+  }
+
+  &__info {
+    font-style: normal;
+    font-weight: 400;
+    font-size: font(sm1);
+    line-height: 24px;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 8px;
+    height: 0;
+    flex-direction: column;
+    z-index: 2;
+    margin-top: 61px;
+
+    &-btn {
+      background: color(red);
+    font-family: 'NORTHDEN';
+      font-size: font(md2);
+      font-weight: 600;
+      color: color(neutral);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s linear;
+      border: none;
+      outline: none;
+      padding: 10px;
+      width: 207px;
+
+      &.secondary {
+        border: 1px solid color(red);
+        background: color(neutral);
+        color: color(red);
+      }
+    }
+  }
+
+  @include respond-to(landscape1) {
+    &__title {
+      font-size: font(b3);
+    }
+
+    &__subtitle {
+      font-size: font(b4);
+      line-height: 40px;
+    }
+
+    &__info {
+      font-size: font(sm2);
+      line-height: 24px;
+    }
+
+    &__right {
+      margin-bottom: 0px;
+      margin-top: 20px;
+      & .video {
+        // margin-top: 40px;
+        @include w-h(250px, 150px);
+      }
+    }
+
+    &__left {
+      margin-top: 10px;
+      margin-bottom: 0px;
+      > div {
+        width: 285px;
+        margin-right: 40px;
+      }
+    }
+
+    &__btns {
+      margin-top: 30px;
+
+      &-btn {
+        font-size: font(md3);
+        width: 190px;
+      }
+    }
+
+    &__center {
+      @include w-h(300px, 100%);
+    }
+  }
+
+  @include respond-to(landscape) {
+    &__title {
+      font-size: font(b4);
+    }
+
+    &__subtitle {
+      font-size: font(md1);
+      line-height: 30px;
+    }
+
+    &__info {
+      font-size: font(sm1);
+      line-height: 22px;
+    }
+
+    &__right {
+      margin-bottom: 0px;
+      margin-top: 50px;
+      & .video {
+        @include w-h(240px, 150px);
+      }
+    }
+
+    &__left {
+      margin-bottom: 0px;
+      margin-top: 50px;
+      > div {
+        width: 285px;
+        margin-right: 20px;
+      }
+    }
+
+    &__btns {
+      margin-top: 10px;
+
+      &-btn {
+        font-size: font(sm1);
+        width: 170px;
+      }
+    }
+
+    &__center {
+      @include w-h(230px, 100%);
+    }
+  }
+
+  @include respond-to(tablet) {
+    &__title {
+      font-size: font(b4);
+    }
+
+    &__subtitle {
+      font-size: font(b3);
+      line-height: 40px;
+    }
+
+    &__info {
+      font-size: font(sm1);
+      line-height: 22px;
+    }
+
+    &__right {
+      display: flex;
+      flex: none;
+      align-items: flex-end;
+      gap: 32px;
+      flex-direction: column;
+      margin-bottom: 0px;
+      width: 100%;
+      &.left {
+        order: 1;
+      }
+      & .charInfo__btns {
+        display: flex;
+      }
+
+      &.left {
+        align-items: flex-start;
+      }
+      & .video {
+        // margin-top: 40px;
+
+        @include w-h(250px, 150px);
+      }
+    }
+
+    &__left {
+      margin-top: 140px;
+      margin-bottom: 0px;
+      height: fit-content;
+      flex: none;
+
+      &.left {
+        order: 1;
+
+        & > div {
+          width: 550px;
+          margin-left: 0px;
+        }
+      }
+
+      & .charInfo__btns {
+        display: none;
+      }
+      > div {
+        width: 350px;
+        margin-right: 20px;
+      }
+    }
+
+    &__btns {
+      margin-top: 0px;
+      width: 100%;
+
+      &-btn {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+      }
+    }
+
+    &__center {
+      display: none;
+    }
+  }
+  @include respond-to(mobile) {
+    &__title {
+      font-size: font(md1);
+    }
+
+    &__subtitle {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    &__info {
+      font-size: font(sm1);
+      line-height: 24px;
+      margin-top: 8px;
+    }
+
+    &__right {
+      & .video {
+        @include w-h(172px, 100px);
+      }
+    }
+
+    &__left {
+      margin-top: 90px;
+
+      > div {
+        width: 354px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

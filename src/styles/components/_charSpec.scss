@@ -1,0 +1,113 @@
+.spec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  &__left {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // padding-right: 160px;
+  }
+
+  &__center {
+    height: 100%;
+    width: 380px;
+  }
+
+  &__right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    &-part {
+      display: flex;
+      position: relative;
+
+      &__circle{
+        @include w-h(10px , 10px);
+        background: red;
+        position: absolute;
+        bottom: 0px;
+        transform: rotate(45deg);
+        left: 0;
+      }
+
+    }
+    &-box {
+      @include w-h(433px, 154px);
+      border: 4px solid red;
+    }
+
+    & .flash{
+      margin-top: 77px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 160px;
+    gap: 15px;
+    width: 270px;
+    transform: rotate(45deg);
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 120px;
+      height: 120px;
+      background: white;
+      border: 2px solid red;
+      color: red;
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      path {
+        transition: all 0.2s linear;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        transform: rotate(-45deg);
+      }
+
+      &.active {
+        background: red;
+        color: white;
+
+        path {
+          fill: white;
+        }
+      }
+
+      &.active:nth-of-type(1) {
+        transform: scale(1.2) translateY(-10px) translateX(-10px);
+      }
+      &.active:nth-of-type(2) {
+        transform: scale(1.2) translateY(-10px) translateX(10px);
+      }
+      &.active:nth-of-type(4) {
+        transform: scale(1.2) translateY(10px) translateX(10px);
+      }
+      &.active:nth-of-type(3) {
+        transform: scale(1.2) translateY(10px) translateX(-10px);
+      }
+    }
+  }
+}
+

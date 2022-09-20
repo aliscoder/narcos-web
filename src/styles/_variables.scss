@@ -1,0 +1,41 @@
+// colors START
+
+$colors: (
+  primary: rgba(254, 31, 31, 1),
+  secondary: #0a0908,
+  secondary-inactive: #afa8a1,
+  red: #d10a0a,
+  black: #000000,
+  white: #ffffff,
+  neutral: #fee3c3,
+);
+
+// colors END
+
+// fonts START
+
+$fonts: (
+  b1: 64,
+  b2: 48,
+  b3: 32,
+  b4: 28,
+  md1: 24,
+  md2: 20,
+  md3: 18,
+  sm1: 16,
+  sm2: 14,
+  xs1: 12,
+);
+
+// fonts END
+
+// responsive START
+
+$breakpoints: (
+  "mobile": "(max-width: 767px)",
+  "tablet": "(max-width: 991px)",
+  "landscape": "(max-width: 1199px)",
+  "landscape1": "(max-width: 1399px)",
+);
+
+// responsive END

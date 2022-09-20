@@ -1,0 +1,116 @@
+.welcome {
+  &__main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: font(b1);
+    color: #ffffff;
+    font-family: "Northden";
+    line-height: 43.88px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+      font-size: font(md1);
+    }
+  }
+  &__narcosland-typo {
+    color: white;
+    font-size: 180px;
+    font-family: "Northdenrrough";
+    letter-spacing: 0.165em;
+    font-weight: 400;
+    @include respond-to(landscape) {
+      font-size: 140px;
+      letter-spacing: 2px;
+    }
+    @include respond-to(tablet) {
+      font-size: font(b1);
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.bullet {
+  &__main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: font(md1);
+    color: #ffffff;
+    font-family: "Northden";
+    line-height: 43.88px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+      font-size: font(sm1);
+    }
+  }
+  &__narcosland-typo {
+    color: white;
+    font-size: 38px;
+    font-family: "Northden";
+    letter-spacing: 0.165em;
+    font-weight: 400;
+    text-align: center;
+    @include respond-to(tablet) {
+      letter-spacing: 2px;
+
+      font-size: font(b3);
+    }
+  }
+}
+
+.government {
+  &__main {
+    width: 100%;
+    // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: font(b1);
+    color: #ffffff;
+    font-family: "Northden";
+    line-height: 43.88px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+      font-size: font(md1);
+    }
+  }
+  &__narcosland-typo {
+    color: white;
+    font-size: 38px;
+    font-family: "Northden";
+    letter-spacing: 0.165em;
+    font-weight: 700;
+  }
+}
+.img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  // overflow: hidden;
+}
+
+.car-right {
+  position: absolute;
+  right: 0;
+}
+.car-left {
+  position: absolute;
+  left: 0;
+}

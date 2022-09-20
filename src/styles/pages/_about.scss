@@ -1,0 +1,123 @@
+.about {
+  background: #f5ece2;
+
+  &__main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 162px;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--sub-title {
+      max-width: 425px;
+      margin-top: 45px;
+      text-align: justify;
+      font-size: font(sm1);
+      line-height: 24px;
+    }
+
+    @include respond-to(tablet) {
+      order: 2;
+      img:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img:first-child {
+      display: none;
+    }
+
+    &__video {
+      width: 521px;
+      height: 340px;
+      position: relative;
+      background-image: url("../../../public//images/about.png");
+      background-color: #000;
+      background-size: cover;
+
+      @include respond-to(mobile) {
+        width: 356px;
+        height: 200px;
+        background-image: url("../../../public//images/about-mob.png");
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: calc(50% - 25px);
+          top: calc(50% - 25px);
+          width: 50px;
+          height: 50px;
+          background: #ffffff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        &--play {
+          position: absolute;
+          overflow: hidden;
+          transform: translateY(0%) rotate(120deg) skewY(30deg) scaleX(0.866);
+          pointer-events: none;
+          width: 12px;
+          height: 12px;
+          z-index: 55;
+          left: calc(50% - 10px);
+          top: calc(50% - 6px);
+
+          &::before,
+          &::after {
+            width: 12px;
+            height: 12px;
+            content: "";
+            position: absolute;
+            background: red;
+            pointer-events: auto;
+          }
+
+          &::before {
+            // prettier-ignore
+            transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(30deg) scaleY(0.866) translateX(-24%);
+          }
+
+          &::after {
+            // prettier-ignore
+            transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(-30deg) scaleY(0.866) translateX(24%);
+          }
+
+          border-radius: 20%;
+
+          &::before {
+            border-radius: 20% 20% 20% 55%;
+          }
+
+          &::after {
+            border-radius: 20% 20% 55% 20%;
+          }
+        }
+      }
+    }
+
+    @include respond-to(tablet) {
+      img:first-child {
+        display: block;
+        margin-bottom: 26px;
+      }
+    }
+  }
+}

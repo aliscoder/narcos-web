@@ -1,0 +1,51 @@
+.news {
+  gap: 56px;
+  display: flex;
+  flex-direction: column;
+
+  &__card {
+    display: flex;
+    gap: 48px;
+    justify-content: space-around;
+    width: 100%;
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+
+    &--left {
+      flex: 0 0 409px;
+      height: 231px;
+      border: 4px solid #ffffff;
+      position: relative;
+      background: #000;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-around;
+
+      &-title {
+        font-size: font(b3);
+        color: #ffffff;
+        font-family: "Northden";
+        line-height: 36px;
+        font-weight: 400;
+      }
+      &-subtitle {
+        font-size: font(sm1);
+        line-height: 24px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      &-action {
+        font-size: font(md2);
+
+        color: #fe1f1f;
+      }
+    }
+  }
+}
